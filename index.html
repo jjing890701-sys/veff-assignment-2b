@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Study Dashboard solution for Assignment 1 in T-213-VEFF Spring 2026 at RU"
+    />
+    <meta name="author" content="Harpa Guðjónsdóttir" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+    <title>My Study Dashboard</title>
+  </head>
+
+  <body>
+    <header class="page-header">
+      <h2>My Study Dashboard</h2>
+
+      <div class="user-profile">
+        <img class="user-icon" src="man_3728711.png" alt="User icon." />
+        <p class="user-name">Harpa Guðjónsdóttir</p>
+      </div>
+    </header>
+
+    <main id="dashboard">
+      <section id="task-widget" class="widget">
+        <header class="widget-header">
+          <h2>Today’s tasks</h2>
+        </header>
+
+        <ul class="task-list"></ul>
+
+        <form id="submit-new-task">
+          <div class="task-new-input">
+            <label for="new-task" class="field-label">New task</label>
+            <input
+              type="text"
+              id="new-task"
+              name="new-task"
+              placeholder="Write a new task here..."
+            />
+          </div>
+          <button id="add-task-btn" type="button" class="button button-primary">
+            Add task
+          </button>
+        </form>
+      </section>
+
+      <section class="widget">
+        <header class="widget-header">
+          <h2>Quick Notes</h2>
+        </header>
+
+        <form>
+          <div class="notes-field">
+            <label for="notes-text" class="field-label">Notes</label>
+            <textarea
+              id="notes-text"
+              name="notes-text"
+              rows="5"
+              placeholder="Write your notes here..."
+            ></textarea>
+          </div>
+
+          <div class="widget-actions">
+            <button
+              id="save-notes-btn"
+              type="button"
+              class="button button-primary"
+              disabled
+            >
+              Save changes
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="quote-widget" class="widget">
+        <header class="widget-header">
+          <h2>Daily quote</h2>
+        </header>
+
+        <figure>
+          <blockquote id="quote-text"></blockquote>
+          <figcaption id="quote-author"></figcaption>
+        </figure>
+
+        <form class="quote-controls" id="quote-controls">
+          <div class="quote-category">
+            <label for="quote-category-select" class="field-label"
+              >Category</label
+            >
+            <select id="quote-category-select" name="quote-category">
+              <option value="general" selected>General</option>
+              <option value="productivity">Productivity</option>
+              <option value="study">Study</option>
+              <option value="creativity">Creativity</option>
+            </select>
+          </div>
+
+          <button
+            id="new-quote-btn"
+            type="button"
+            class="button button-primary"
+          >
+            New quote
+          </button>
+        </form>
+      </section>
+
+      <div id="too-small-warning">
+        <img id="oops-img" src="oops.jpg" alt="An image saying oops." />
+        <p>This website requires at least 600px screen width.</p>
+      </div>
+    </main>
+  </body>
+</html>

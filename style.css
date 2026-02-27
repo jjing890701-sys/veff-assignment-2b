@@ -1,0 +1,198 @@
+:root {
+  --bg-main: #1f2933;
+  --text-main: #94a3b8;
+  --heading-text: #e5e7eb;
+
+  --bg-surface: #020617;
+
+  --button-primary-bg: #0ea5e9;
+  --button-primary-text: #020617;
+  --button-primary-border: #94a3b8;
+  --button-primary-active-bg: #09405a;
+  --button-primary-active-text: #ffffff;
+  --button-primary-disabled-bg: #76787c;
+  --button-primary-disabled-text: #94a3b8;
+
+  --input-bg: #020617;
+  --input-border: #94a3b840;
+  --input-text: #e5e7eb;
+
+  --mobile-text: black;
+}
+
+/* Basic styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-text);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Header */
+.page-header {
+  background: var(--bg-surface);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Main Content - Dashboard */
+#dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 40px;
+}
+
+.widget {
+  background-color: var(--bg-surface);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Widget: Todays tasks */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.task-item label {
+  display: inline;
+  margin-bottom: 0;
+}
+
+#submit-new-task {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.task-new-input {
+  flex: 1;
+}
+
+#new-task {
+  width: 100%;
+}
+
+/* Widget: Quick Notes */
+.notes-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+/* Widget: Daily Quote */
+.quote-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.quote-category {
+  flex: 1;
+}
+
+#quote-category-select {
+  width: 100%;
+}
+
+/* Button and other general styles */
+.button {
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid transparent;
+}
+
+.button-primary {
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-border);
+}
+
+.button-primary:active {
+  background: var(--button-primary-active-bg);
+  color: var(--button-primary-active-text);
+}
+
+.button-primary:disabled {
+  background: var(--button-primary-disabled-bg);
+  color: var(--button-primary-disabled-text);
+}
+
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  padding: 8px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+#too-small-warning {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  body {
+    background-color: transparent;
+    color: var(--mobile-text);
+  }
+
+  .page-header {
+    display: none;
+  }
+
+  /* Hide everything in the dashboard except the warning */
+  #dashboard > :not(#too-small-warning) {
+    display: none;
+  }
+
+  #too-small-warning {
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+
+  #oops-img {
+    width: 100%;
+  }
+
+  p {
+    text-align: center;
+  }
+}
